@@ -11,7 +11,12 @@ class Warlock {
 		const std::string	getName(void) const;
 		const std::string	getTitle(void) const;
 		void	introduce(void) const;
+
+		void	learnSpell(Aspell *s);
+		void	forgetSpell(std::string s);
+		void	launchSpell(std::string s, ATarget &t);
 	private:
+		std::vector<ASpell *>	spells;
 		std::string	_name;
 		std::string	_title;
 

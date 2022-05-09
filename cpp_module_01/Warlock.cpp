@@ -22,3 +22,4 @@ void	Warlock::setTitle(const std::string &title)
 const std::string	Warlock::getName(void) const { return this->_name; }
 
 const std::string	Warlock::getTitle(void) const { return this->_title; }
+
