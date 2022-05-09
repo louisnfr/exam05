@@ -9,7 +9,7 @@ class Fwoosh : public ASpell{
 		Fwoosh(void);
 		~Fwoosh(void);
 
-		Aspell *clone(void) const;
+		ASpell *clone(void) const;
 };
 
 #endif

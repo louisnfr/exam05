@@ -12,7 +12,7 @@ class ASpell {
 		ASpell(const std::string &name, const std::string &_effects);
 		ASpell(const ASpell &src);
 		ASpell	&operator=(ASpell const &rhs);
-		~ASpell(void);
+		virtual ~ASpell(void);
 		const std::string	getName(void) const;
 		const std::string	getEffects(void) const;
 		virtual ASpell	*clone(void) const = 0;
