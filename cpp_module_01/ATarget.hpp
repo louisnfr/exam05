@@ -4,19 +4,20 @@
 #include <iostream>
 #include "ASpell.hpp"
 
+class ASpell;
+
 class ATarget {
 	public:
 		ATarget(void);
-		ATarget(const std::string &name, const std::string &_effects);
+		ATarget(const std::string &type);
 		ATarget(const ATarget &src);
 		ATarget	&operator=(ATarget const &rhs);
 		~ATarget(void);
-		const &std::string	getType(void) const;
+		const std::string	&getType(void) const;
 		virtual ATarget	*clone(void) const = 0;
-		void	getHitBySpell(const ASpell &a)
+		void	getHitBySpell(const ASpell &a) const;
 	private:
 		std::string	_type;
-
 };
 
 #endif
