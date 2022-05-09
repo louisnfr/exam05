@@ -1,50 +1,43 @@
 #include "Warlock.hpp"
 
 Warlock::Warlock(const std::string &name, const std::string &title)
-	: _name(name), _title(title) {
-	std::cout << name << ": This looks like another boring day." << std::endl;
+	: name(name), title(title) {
+	std::cout << name << ": This looks like another boring day.\n";
 }
 
-Warlock::~Warlock(void) {
-	std::cout << this->_name << ": My job here is done." << std::endl;
-	std::map<std::string, ASpell *>::iterator it_begin = spells.begin();
-	std::map<std::string, ASpell *>::iterator it_end = spells.end();
-	while (it_begin != it_end)
+Warlock::~Warlock() {
+	std::cout << name << ": My job here is done!\n";
+	std::map<std::string, ASpell *>::iterator it_b = arr.begin();
+	while (it_b != arr.end())
 	{
-		delete it_begin->second;
-		++it_begin;
+		delete it_b->second;
+		++it_b;
 	}
-	spells.clear();
+	arr.clear();
 }
 
-void	Warlock::introduce(void) const
-{
-	std::cout << this->_name << ": I am " << this->_name << ", "<< this->_title << "!" << std::endl;
+void Warlock::introduce() const {
+	std::cout << name << ": I am" << name << ", " << title << std::endl;
 }
 
-void	Warlock::setTitle(const std::string &title)
-{
-	this->_title = title;
-}
+const std::string &Warlock::getName() const {return this->name;}
+const std::string &Warlock::getTitle() const {return this->title;}
+void Warlock::setTitle(const std::string &s) {this->title = s;}
 
-const std::string	Warlock::getName(void) const { return this->_name; }
-
-const std::string	Warlock::getTitle(void) const { return this->_title; }
-
-void	Warlock::learnSpell(ASpell *s) {
+void Warlock::learnSpell(ASpell *s) {
 	if (s)
-		spells.insert(std::pair<std::string, ASpell *>(s->getName(), s->clone()));
+		arr.insert(std::pair<std::string, ASpell *>(s->getName(), s->clone()));
 }
 
-void	Warlock::forgetSpell(std::string s) {
-	std::map<std::string, ASpell *>::iterator it = spells.find(s);
-	if (it != spells.end())
+void Warlock::forgetSpell(std::string s) {
+	std::map<std::string, ASpell *>::iterator it = arr.find(s);
+	if (it != arr.end())
 		delete it->second;
-	spells.erase(s);
+	arr.erase(s);
 }
 
-void	Warlock::launchSpell(std::string s, ATarget &t) {
-	ASpell	*spell = spells[s];
+void Warlock::launchSpell(std::string s, ATarget &t) {
+	ASpell *spell = arr[s];
 	if (spell)
 		spell->launch(t);
 }

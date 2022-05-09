@@ -1,11 +1,9 @@
 #include "Warlock.hpp"
 #include "Dummy.hpp"
-#include "Fwoosh.hpp"
-#include "ASpell.hpp"
-#include "ATarget.hpp"
-#include "Fireball.hpp"
-#include "Polymorph.hpp"
 #include "BrickWall.hpp"
+#include "Polymorph.hpp"
+#include "Fireball.hpp"
+#include "Fwoosh.hpp"
 #include "TargetGenerator.hpp"
 
 int main()

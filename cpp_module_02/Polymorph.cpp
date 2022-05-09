@@ -1,9 +1,8 @@
 #include "Polymorph.hpp"
 
 Polymorph::Polymorph() : ASpell("Polymorph", "turned into a critter") {}
+Polymorph::~Polymorph() {}
 
-Polymorph::~Polymorph(void) {}
-
-ASpell	*Polymorph::clone(void) const {
+ASpell *Polymorph::clone() const {
 	return (new Polymorph);
 }

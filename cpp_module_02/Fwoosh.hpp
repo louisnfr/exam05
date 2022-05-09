@@ -1,15 +1,11 @@
-#ifndef FWOOSH_HPP_
-#define FWOOSH_HPP_
+#pragma once
 
-#include <iostream>
 #include "ASpell.hpp"
 
-class Fwoosh : public ASpell{
+class Fwoosh : public ASpell {
 	public:
-		Fwoosh(void);
-		~Fwoosh(void);
+		Fwoosh();
+		~Fwoosh();
 
-		ASpell *clone(void) const;
+		virtual ASpell *clone() const;
 };
-
-#endif

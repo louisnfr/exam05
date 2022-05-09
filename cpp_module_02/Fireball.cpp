@@ -1,9 +1,8 @@
 #include "Fireball.hpp"
 
 Fireball::Fireball() : ASpell("Fireball", "burnt to a crisp") {}
+Fireball::~Fireball() {}
 
-Fireball::~Fireball(void) {}
-
-ASpell	*Fireball::clone(void) const {
+ASpell *Fireball::clone() const {
 	return (new Fireball);
 }

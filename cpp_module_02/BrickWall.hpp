@@ -1,12 +1,11 @@
 #pragma once
 
-#include <iostream>
 #include "ATarget.hpp"
 
-class BrickWall : public ATarget{
+class BrickWall : public ATarget {
 	public:
-		BrickWall(void);
-		~BrickWall(void);
+		BrickWall();
+		~BrickWall();
 
-		ATarget *clone(void) const;
+		virtual ATarget *clone() const;
 };
