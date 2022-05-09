@@ -6,15 +6,18 @@
 class Warlock {
 	public:
 		Warlock(const std::string &name, const std::string &title);
-		// Warlock(const Warlock &src);
-		// Warlock	&operator=(Warlock const &rhs);
 		~Warlock(void);
-		// void	setTitle(const std::string &title);
-		// std::string	getName(void) const;
-		// std::string	getTitle(void) const;
+		void	setTitle(const std::string &title);
+		const std::string	getName(void) const;
+		const std::string	getTitle(void) const;
+		void	introduce(void) const;
 	private:
-		const std::string	_name;
-		const std::string	_title;
+		std::string	_name;
+		std::string	_title;
+
+		Warlock(void);
+		Warlock(const Warlock &src);
+		Warlock	&operator=(Warlock const &rhs);
 };
 
 #endif // WARLOCK_HPP_
